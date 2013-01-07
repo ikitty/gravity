@@ -1,1 +1,137 @@
-hello git
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>晃一晃，有惊喜</title>
+	<style type="text/css">
+		body{background:#000 url(qzone_bg.png) no-repeat center top}
+		.tree{width: 230px;height: 377px;background-image: url(tree.png);position:absolute;right:3%;top:200px}
+		.tree .money{display: block;position: absolute;width: 35px;height: 35px;background-image:url(money.png);-webkit-transform:rotate(0deg);-webkit-transition:all 0.05s linear;}
+
+        .css3_bubbles {
+            top:-50px;
+            right: -30px;
+            position: absolute;
+            display: block;
+            width: 130px;
+            height: 40px;
+            padding: 0 8px;
+            text-align: center;
+            background-color: #2DAEBF;
+            color: #333;
+            text-decoration: none;
+            font: 14px/40px "Century Gothic",Georgia,simsun,sans-serif;
+            border: 1px solid #2A3F56;
+            outline-color: #3C5A76;
+            -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .6);
+            -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .6);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, .6);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            text-shadow: rgba(255, 255, 255, .4) 0 1px 0;
+        }
+        .css3_bubbles::before, .css3_bubbles::after {
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            content: "";
+            border-style: solid;
+            border-color: #222 transparent;
+            border-width: 10px 10px 0;
+        }
+        .css3_bubbles::after {
+            bottom: -9px;
+            left: 20px;
+            border-color: #2DAEBF transparent
+        }
+	</style>
+</head>
+<body>
+	<!-- <p><span>alpha变化:</span><span id="alpha"></span></p>
+	<p><span>beta变化:</span><span id="beta"></span></p>
+	<p><span>gamma变化:</span><span id="gamma"></span></p> -->
+	<div class="tree" id="tree">
+		<a class="money" style="left:100px;top:70px"></a>
+		<a class="money" style="left:70px;top:130px"></a>
+		<a class="money" style="left:130px;top:180px"></a>
+		<a class="money" style="left:60px;top:200px"></a>
+		<a class="money" style="left:120px;top:240px"></a>
+        <p class="css3_bubbles" id="shake_tips">晃一晃电脑，有惊喜</p>
+	</div>
+
+	<script type="text/javascript">
+		//公共变量
+		var SHAKE_THRESHOLD = 2;
+		var BETA_ACCE_THRESHOLD = 3.5;
+		var GAMMA_ACCE_THRESHOLD = 3;
+		var ROTATE_SCALE = 3;
+		var MIN_SHAKE = 1;
+		var last_alpha = 0, last_beta = 0, last_gamma = 0 , shake_record = 0;
+
+		//监听方向传感器
+		if (window.DeviceOrientationEvent) {
+			window.addEventListener('deviceorientation',deviceOrientationHandler, false);
+		}
+
+		//方向变化时的处理函数
+		function deviceOrientationHandler(eventData) {
+			//不支持重力感应的用户给个提示
+			if(eventData.beta == null){
+				window.removeEventListener('deviceorientation',deviceOrientationHandler,false);
+				document.getElementById('shake_tips').style.width = '150px';
+                document.getElementById('shake_tips').innerHTML = '您的电脑不支持晃一晃';
+                return false;
+			}
+
+			//计算方向的变化度
+			var change_alpha = Math.abs(eventData.alpha - last_alpha);
+			var change_beta = Math.abs(eventData.beta - last_beta);
+			var change_gamma = Math.abs(eventData.gamma - last_gamma);
+
+			if(change_beta < MIN_SHAKE && change_gamma < MIN_SHAKE){          //防止细微抖动
+				return false;
+			}
+
+			//红包跟随电脑的方向转动
+			var rotate_deg = Math.abs(eventData.beta)>Math.abs(eventData.gamma)?eventData.beta:eventData.gamma;
+			var moneys = document.getElementById('tree').getElementsByTagName('a');
+			for(var i=0;i<moneys.length;i++){
+				moneys[i].style.webkitTransform = 'rotate('+ rotate_deg*ROTATE_SCALE +'deg)';
+			}
+
+			//document.getElementById('alpha').innerHTML = rotate_deg;
+			//document.getElementById('beta').innerHTML = eventData.beta;
+			//document.getElementById('gamma').innerHTML = eventData.gamma;
+
+			//当beta方向或者gamma方向的变化度大于阀值时，记录一次摇动
+			if(change_beta > BETA_ACCE_THRESHOLD || change_gamma > GAMMA_ACCE_THRESHOLD) shake_record++;
+
+			//当摇动次数大于阀值时，视作为有效的用户摇动行为
+			if(shake_record > SHAKE_THRESHOLD){
+				console.log('shake');
+				shake_record = 0;
+
+                //成功摇出了礼包
+                window.removeEventListener('deviceorientation',deviceOrientationHandler,false);
+                document.getElementById('shake_tips').innerHTML = '点击红包领奖！';
+
+                var money_index = parseInt(Math.random() * moneys.length);
+                var new_top = parseInt(window.getComputedStyle(document.getElementById('tree'),null).height) - 50;
+                moneys[money_index].style.webkitTransitionDuration = '0.5s';
+                moneys[money_index].style.top = new_top + 'px';
+                moneys[money_index].setAttribute('href','javascript:alert("恭喜您获得黄钻特权大礼包！")')
+                //console.log(new_top)
+                
+			}
+
+			//记录下各方向的值，用于下一次计算变化度
+			last_alpha = eventData.alpha;
+			last_beta = eventData.beta;
+			last_gamma = eventData.gamma;
+
+		}
+	</script>
+</body>
+</html>
