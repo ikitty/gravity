@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>美食认证空间</title>
-    <meta name="viewport" content="width=640" />
+    <meta name="viewport" content="width=device-width" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link href="../food_auth.css" rel="stylesheet" type="text/css" media="all" />
@@ -13,9 +13,9 @@
 <body>
 <div class="container" id="container">
     <!-- 会员卡 -->
-    <div class="member_card">
-        <img id="member_card_front" class="show" src="../img/member_card_front.png" alt="会员卡">
-        <img id="member_card_back" class="back_hide" src="../img/member_card_back.png" alt="会员卡">
+    <div class="member_card" id="member_card">
+        <img id="member_card_front" class="show" src="../img/member_card_front.png" alt="会员卡正面">
+        <img id="member_card_back" class="back_hide" src="../img/member_card_back.png" alt="会员卡背面">
     </div>
     <!-- 会员特权 -->
     <div class="member_privilege">
@@ -28,13 +28,13 @@
 
     <!-- 滚动图片区 -->
     <div class="scroll_pic_container">
-        <ul style="left: 20px" id="scroll_pic">
-            <li><img src="../img/food_sample.jpg" alt=""></li>
-            <li><img src="../img/food_sample.jpg" alt=""></li>
-            <li><img src="../img/food_sample.jpg" alt=""></li>
-            <li><img src="../img/food_sample.jpg" alt=""></li>
-            <li><img src="../img/food_sample.jpg" alt=""></li>
-            <li><img src="../img/food_sample.jpg" alt=""></li>
+        <ul style="left: 20px">
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
+            <li><a href="food_big_photo.html"><img src="../img/food_sample.jpg" alt=""></a></li>
         </ul>
     </div>
     <!-- 商家信息 -->
@@ -47,55 +47,40 @@
         <a class="get_member_card" href="###">领取会员卡</a>
     </div>
 </div>
-
-<!-- 全屏查看图片 -->
-<div class="big_photo_container" style="display:none" id="big_photo_container">
-    <!-- 图片区 -->
-    <ul class="big_photo" style="left: 0">
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-        <li><img src="../img/food_big_sample.jpg" alt=""></li>
-    </ul>
-    <!-- 标记区 -->
-    <ul class="photo_points">
-        <li class="current"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
 </body>
 <!--<script src="http://10.66.60.122:8081/target/target-script-min.js#anonymous"></script>-->
 
 <!-- 示例代码 -->
 <script type="text/javascript">
     /* 会员卡3D翻转 */
-    document.getElementById('member_card_front').addEventListener('click',function(){
+    /*document.getElementById('member_card_front').addEventListener('click',function(){
         this.setAttribute('class','front_hide');
-        window.setTimeout(function(){
-            document.getElementById('member_card_back').setAttribute('class','show');
-        },500)
+        document.getElementById('member_card_back').setAttribute('class','show');
     });
     document.getElementById('member_card_back').addEventListener('click',function(){
         this.setAttribute('class','back_hide');
-        window.setTimeout(function(){
+        document.getElementById('member_card_front').setAttribute('class','show');
+    });*/
+    document.getElementById('member_card').addEventListener('click',function(e){
+        console.log(e.target);
+        if(e.target.getAttribute('id') == 'member_card_front'){
+            e.target.setAttribute('class','front_hide');
+            document.getElementById('member_card_back').setAttribute('class','show');
+        }
+        else if(e.target.getAttribute('id') == 'member_card_back'){
+            e.target.setAttribute('class','back_hide');
             document.getElementById('member_card_front').setAttribute('class','show');
-        },500)
+        }
     });
 
     /* 点击查看大图 */
-    document.getElementById('scroll_pic').addEventListener('click',function(){
+    /*document.getElementById('scroll_pic').addEventListener('click',function(){
         document.getElementById('big_photo_container').style.display = 'block';
         document.getElementById('container').style.display = 'none';
     });
     document.getElementById('big_photo_container').addEventListener('click',function(){
         this.style.display = 'none';
         document.getElementById('container').style.display = 'block';
-    });
+    });*/
 </script>
 </html>
