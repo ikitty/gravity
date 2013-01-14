@@ -56,7 +56,7 @@ body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/bod
 .big_photo_container .photo_points li.current{background-color: #fff}
 
 /* 针对ipad的处理 */
-@media only screen and (min-device-width:1000px){
+@media only screen and (min-device-width:600px){
     .big_photo_container .big_photo{width:6144px;position: absolute;top:50px;left:0}
     .big_photo_container .big_photo li{width:1024px;float: left}
     .big_photo_container .big_photo li img{width:1024px}
