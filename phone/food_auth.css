@@ -11,7 +11,7 @@ a{cursor: pointer;text-decoration: none}
 img{border: none}
 body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/body_bg_repeat.jpg) repeat-x;background-size: 1px 216px}
 
-.container{background:url(base64/food_bg.jpg) no-repeat center top;padding-top: 28px;font-size: 16px;background-size: 320px 198px}
+.container{width:320px;margin:0 auto;background:url(base64/food_bg.jpg) no-repeat center top;padding-top: 28px;font-size: 16px;background-size: 320px 198px}
 
 .member_card{width: 236px;height: 142px;margin:0 auto;position: relative;}
 .member_card img{width: 236px;height: 142px;-webkit-backface-visibility:hidden;-webkit-transition:all 0.4s linear;position: absolute;left: 0;top:0;cursor: pointer}
@@ -33,6 +33,7 @@ body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/bod
 
 .shop_info{margin: 18px 10px 75px;border: #dbdbdb 2px solid;border-radius: 7px;color: #0b0b0b;background-color: #f6f6f6}
 .shop_info .info_list{display: block;height: 50px;padding:0 12px;line-height: 50px;position: relative;border-bottom:#e8e8e8 1px solid;border-top:#fff 1px solid;cursor: pointer}
+.shop_info .info_list:active{background-color: #00b700}
 .shop_info .info_list.first{border-top: none}
 .shop_info .info_list.last{border-bottom: none}
 .shop_info .info_list i,span{display: inline-block;vertical-align: middle;}
@@ -45,11 +46,18 @@ body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/bod
 .bottom_area .get_member_card{display: block;width:300px;margin:0 auto;color: #fff;text-align: center;background-color: #00b700;height: 36px;line-height: 36px;border-radius:5px;border: #636363 1px solid;font-size: 18px;}
 
 /* 全屏查看大图 */
-.big_photo_container{position: absolute;width:320px;height:100%;background-color: #000;left: 0;top:0;overflow: hidden;}
-.big_photo_container .big_photo{width:1920px;position: absolute;top:50px;left:0;height:250px}
-.big_photo_container .big_photo li{width:320px;height: 250px;float: left}
-.big_photo_container .big_photo li img{width:320px;height: 250px}
+.big_photo_container{position: absolute;width:100%;height:100%;background-color: #000;left: 0;top:0;overflow: hidden;display: none}
+.big_photo_container .big_photo{width:1920px;position: absolute;top:50px;left:0}
+.big_photo_container .big_photo li{width:320px;float: left}
+.big_photo_container .big_photo li img{width:320px}
 
 .big_photo_container .photo_points{position: absolute;bottom:12px;left: 50%;width:90px;height: 6px;margin-left: -45px}
 .big_photo_container .photo_points li{width: 6px;height: 6px;float: left;margin-right:9px;border-radius: 3px;background-color: #4d4d4d}
 .big_photo_container .photo_points li.current{background-color: #fff}
+
+/* 针对ipad的处理 */
+@media only screen and (min-width:1000px){
+    .big_photo_container .big_photo{width:6144px;position: absolute;top:50px;left:0}
+    .big_photo_container .big_photo li{width:1024px;float: left}
+    .big_photo_container .big_photo li img{width:1024px}
+}
