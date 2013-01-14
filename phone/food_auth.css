@@ -9,9 +9,9 @@ li{list-style: none}
 html,body{font-size:12px;}
 a{cursor: pointer;text-decoration: none}
 img{border: none}
-body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/body_bg_repeat.jpg) repeat-x;background-size: 1px 216px}
+body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/body_bg_repeat.jpg) repeat-x;background-size: 1px 198px}
 
-.container{width:320px;margin:0 auto;background:url(base64/food_bg.jpg) no-repeat center top;padding-top: 28px;font-size: 16px;background-size: 320px 198px}
+.container{width:320px;margin:0 auto;background:url(base64/food_top_bg.jpg) no-repeat center top;padding-top: 28px;font-size: 16px;background-size: 320px 198px}
 
 .member_card{width: 236px;height: 142px;margin:0 auto;position: relative;}
 .member_card img{width: 236px;height: 142px;-webkit-backface-visibility:hidden;-webkit-transition:all 0.4s linear;position: absolute;left: 0;top:0;cursor: pointer}
@@ -33,7 +33,7 @@ body{-webkit-text-size-adjust:none;color: #666;background:#e5e5e5 url(base64/bod
 
 .shop_info{margin: 18px 10px 75px;border: #dbdbdb 2px solid;border-radius: 7px;color: #0b0b0b;background-color: #f6f6f6}
 .shop_info .info_list{display: block;height: 50px;padding:0 12px;line-height: 50px;position: relative;border-bottom:#e8e8e8 1px solid;border-top:#fff 1px solid;cursor: pointer}
-.shop_info .info_list:active{background-color: #00b700}
+.shop_info .info_list:active{background-color: #e5e5e5}
 .shop_info .info_list.first{border-top: none}
 .shop_info .info_list.last{border-bottom: none}
 .shop_info .info_list i,span{display: inline-block;vertical-align: middle;}
