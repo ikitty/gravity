@@ -1,0 +1,32 @@
+/*
+ * Copy Right: Tencent ISUX
+ * Project: QQ互联
+ * Comments: 安卓手机页面-挑战&炫耀API
+ * @author: Tysonpan
+ */
+*{margin:0;padding:0;}
+li{list-style: none}
+html,body{font-size:12px;}
+body{-webkit-text-size-adjust:none}
+
+.challenge_pop{width: 244px;position: absolute;left: 50%;top:50%;margin: -94px 0 0 -122px;border: #6a6a6a 1px solid;box-shadow: 0 1px 1px #656565;background: -webkit-gradient(linear, 0 0, 0 100%, from(#e2e2e2), to(#d0cfcf));border-radius: 3px}
+.challenge_pop .challenge_main{padding:12px 10px 10px 10px;border-bottom: #c4c4c4 1px solid}
+.challenge_main .challenge_info{overflow: hidden;padding-bottom: 10px;}
+.challenge_main .challenge_info .img_container{width: 60px;height: 60px;float: left;position: relative;margin-right: 9px}
+.challenge_main .challenge_info .img_container img{width: 60px;height: 60px}
+.challenge_main .challenge_info .img_container .cover{display: none;position: absolute;bottom: 0;left:0;width: 100%;height: 15px;background-image: url(base64/transparent_cover.png);background-size: 60px 15px;background-repeat: no-repeat;}
+.challenge_main .challenge_info p{float: left;color: #5a5f62;font-weight: bold;font-size: 14px;width: 152px;padding-left: 1px}
+.challenge_main .hide_up{padding-bottom:5px}
+.challenge_main .hide_up .img_container{height: 22px;overflow: hidden;}
+.challenge_main .hide_up .img_container .cover{display: block;}
+
+.challenge_main .challenge_vs{overflow: hidden;padding-bottom: 10px}
+.challenge_main .challenge_vs span{float: left;padding:10px;color: #5a5f62;font-size: 14px;text-shadow: 1px 1px 1px #fff}
+.challenge_main .challenge_vs img{float: left;width: 36px;height: 36px}
+
+.challenge_pop .challenge_input{border: #b1b1b1 1px solid;border-radius: 3px;display: block;width:218px;color: #7c7c7c;padding: 3px;height: 26px}
+
+.challenge_op{padding: 10px;border-top: #ecebeb 1px solid;overflow: hidden;}
+.challenge_op a{float: left;width: 105px;height:30px;border-radius:3px;text-align: center;line-height: 30px;cursor: pointer}
+.challenge_op a.confirm_button{background: -webkit-gradient(linear, 0 0, 0 100%, from(#28b0f6), to(#068bd0));border: #02527c 1px solid;color: #fff;text-shadow: 1px 1px 1px #333}
+.challenge_op a.normal_button{background: -webkit-gradient(linear, 0 0, 0 89%, from(#fcfcfc), to(#dbd8d8));border: #898989 1px solid;color: #5a5f62;text-shadow: 1px 1px 1px #eee;margin-left: 10px}
