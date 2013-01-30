@@ -13,7 +13,7 @@ body{background-color: #d4d6d8}
 .app-nav .app-type .app-type-name{display: block;text-align: center;color: #0a0603}
 
 /* 广告图轮播 */
-.ad-scroll-container{height: 104px;overflow: hidden;position: relative;background: url(base64/ad-scroll-container-bg.png) right center no-repeat;background-size: 4px 104px;margin: 5px 0}
+.ad-scroll-container{height: 104px;overflow: hidden;position: relative;background: url(base64/ad-scroll-container-bg.png) right center no-repeat;background-size: 4px 104px;margin: 5px 0;box-shadow: 1px 0 1px #c2c4c5}
 .ad-scroll-container .ad-scroll{width:832px;height:90px;position: absolute;left: 0;top:7px}
 .ad-scroll-container .ad-scroll li{float: left;width: 200px;margin-right:8px}
 .ad-scroll-container .ad-scroll li a{display: block;cursor: pointer;height:90px}
