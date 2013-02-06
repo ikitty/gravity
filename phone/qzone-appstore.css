@@ -6,8 +6,8 @@ body{background-color: #f2f2f2}
 .container{margin:10px}
 
 /* app分类 */
-.app-nav{border-radius: 5px;background-color: #fdfdfd;height: 100px;box-shadow: 0 1px 3px #dbdbdb , 0 0 -1px #fff inset;border: #dbdbdb 1px solid;margin-top: 12px;margin-bottom: 12px}
-.app-nav .app-type{float: left;width: 33%;border-right:#e0e0e0 1px solid;height: 100px;cursor: pointer;text-align: center;line-height: 100px}
+.app-nav{border-radius: 5px;background-color: #fdfdfd;height: 55px;box-shadow: 0 1px 3px #dbdbdb , 0 0 -1px #fff inset;border: #dbdbdb 1px solid;margin-top: 12px;margin-bottom: 12px}
+.app-nav .app-type{float: left;width: 33%;border-right:#e0e0e0 1px solid;height: 55px;cursor: pointer;text-align: center;line-height: 55px}
 .app-nav .app-type:last-child{border-right: none}
 .app-nav .app-type i{width: 20px;height: 20px;background-size: 20px 20px;display: inline-block;vertical-align: middle;}
 .app-nav .app-type i.icon-game-nav{background-image: url(base64/icon-game-nav.png)}
