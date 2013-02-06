@@ -7,10 +7,13 @@ body{background-color: #f2f2f2}
 
 /* app分类 */
 .app-nav{border-radius: 5px;background-color: #fdfdfd;height: 100px;box-shadow: 0 1px 3px #dbdbdb , 0 0 -1px #fff inset;border: #dbdbdb 1px solid;margin-top: 12px;margin-bottom: 12px}
-.app-nav .app-type{float: left;width: 33%;border-right:#e0e0e0 1px solid;height: 100px;cursor: pointer}
+.app-nav .app-type{float: left;width: 33%;border-right:#e0e0e0 1px solid;height: 100px;cursor: pointer;text-align: center;line-height: 100px}
 .app-nav .app-type:last-child{border-right: none}
-.app-nav .app-type .icon-app-type{display: block;width: 36px;height: 36px;background-size: 36px 36px;background-image: url(img/temp/icon-app-type.png);margin:20px auto 12px}
-.app-nav .app-type .app-type-name{display: block;text-align: center;color: #0a0603}
+.app-nav .app-type i{width: 20px;height: 20px;background-size: 20px 20px;display: inline-block;vertical-align: middle;}
+.app-nav .app-type i.icon-game-nav{background-image: url(base64/icon-game-nav.png)}
+.app-nav .app-type i.icon-app-nav{background-image: url(base64/icon-app-nav.png)}
+.app-nav .app-type i.icon-myplay-nav{background-image: url(base64/icon-myplay-nav.png)}
+.app-nav .app-type .app-type-name{color: #0a0603;font-size: 14px;vertical-align: middle}
 
 /* 广告图轮播 */
 .ad-scroll-container{height: 104px;overflow: hidden;position: relative;background: url(base64/ad-scroll-container-bg.png) right center no-repeat;background-size: 4px 104px;margin: 5px 0}
@@ -23,11 +26,12 @@ body{background-color: #f2f2f2}
 .app-list-container{box-shadow:0 1px 3px #e0e0e0;background-color: #fdfdfd;border-radius: 5px;border: #e0e0e0 1px solid}
 .app-list-container .app-list-line{overflow: hidden;border-bottom:#e0e0e0 1px solid}
 .app-list-container .app-list-line:last-child{border-bottom:none}
-.app-list-container .app-list-line .app-each{float: left;width: 33%;height: 160px;text-decoration: none;text-align: center;border-right:#e0e0e0 1px solid}
+.app-list-container .app-list-line .app-each{float: left;width: 33%;height: 160px;text-decoration: none;border-right:#e0e0e0 1px solid}
 .app-list-container .app-list-line .app-each:last-child{border-right: none}
-.app-list-container .app-list-line .app-each .app-logo{width: 66px;height: 66px;display: block;margin:18px auto 8px}
+.app-list-container .app-list-line .app-each-content{width: 100px;margin: 0 auto;padding-top: 18px}
+.app-list-container .app-list-line .app-each .app-logo{width: 66px;height: 66px;display: block;margin-bottom: 8px}
 .app-list-container .app-list-line .app-each .app-name{font-size: 16px;color: #000;font-weight: bold;}
 .app-list-container .app-list-line .app-each p{color: #9b9b9b;padding: 5px 0;font-size: 12px}
 .app-list-container .app-list-line .app-each p b{color: #e45c18}
-.app-list-container .app-list-line .app-each .star-outer{display: block;width: 50px;height: 10px;background-image: url(base64/star-15-bg.png);background-size: 50px 10px;margin: 0 auto}
+.app-list-container .app-list-line .app-each .star-outer{display: block;width: 50px;height: 10px;background-image: url(base64/star-15-bg.png);background-size: 50px 10px}
 .app-list-container .app-list-line .app-each .star-inner{display: block;height: 10px;background-image: url(base64/star-15.png);background-size: 50px 10px;}
