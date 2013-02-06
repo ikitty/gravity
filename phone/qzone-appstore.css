@@ -28,7 +28,7 @@ body{background-color: #f2f2f2}
 .app-list-container .app-list-line:last-child{border-bottom:none}
 .app-list-container .app-list-line .app-each{float: left;width: 33%;height: 160px;text-decoration: none;border-right:#e0e0e0 1px solid}
 .app-list-container .app-list-line .app-each:last-child{border-right: none}
-.app-list-container .app-list-line .app-each-content{width: 100px;margin: 0 auto;padding-top: 18px}
+.app-list-container .app-list-line .app-each-content{width: 75px;margin: 0 auto;padding-top: 18px;overflow: hidden;}
 .app-list-container .app-list-line .app-each .app-logo{width: 66px;height: 66px;display: block;margin-bottom: 8px}
 .app-list-container .app-list-line .app-each .app-name{font-size: 16px;color: #000;font-weight: bold;}
 .app-list-container .app-list-line .app-each p{color: #9b9b9b;padding: 5px 0;font-size: 12px}
