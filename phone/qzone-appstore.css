@@ -2,7 +2,7 @@
 
 
 /* 外容器 */
-body{background-color: #f2f2f2}
+body{background-color: #f2f2f2;-webkit-text-size-adjust:none;}
 .container{margin:10px}
 
 /* app分类 */
@@ -28,10 +28,10 @@ body{background-color: #f2f2f2}
 .app-list-container .app-list-line:last-child{border-bottom:none}
 .app-list-container .app-list-line .app-each{float: left;width: 33%;height: 160px;text-decoration: none;border-right:#e0e0e0 1px solid}
 .app-list-container .app-list-line .app-each:last-child{border-right: none}
-.app-list-container .app-list-line .app-each-content{width: 75px;margin: 0 auto;padding-top: 18px;overflow: hidden;}
+.app-list-container .app-list-line .app-each-content{width: 66px;margin: 0 auto;padding-top: 18px;overflow: hidden;}
 .app-list-container .app-list-line .app-each .app-logo{width: 66px;height: 66px;display: block;margin-bottom: 8px}
-.app-list-container .app-list-line .app-each .app-name{font-size: 16px;color: #000;font-weight: bold;}
-.app-list-container .app-list-line .app-each p{color: #9b9b9b;padding: 5px 0;font-size: 12px}
+.app-list-container .app-list-line .app-each .app-name{font-size: 14px;color: #000;font-weight: bold;}
+.app-list-container .app-list-line .app-each p{color: #9b9b9b;padding: 5px 0;font-size: 10px}
 .app-list-container .app-list-line .app-each p b{color: #e45c18}
 .app-list-container .app-list-line .app-each .star-outer{display: block;width: 50px;height: 10px;background-image: url(base64/star-15-bg.png);background-size: 50px 10px}
 .app-list-container .app-list-line .app-each .star-inner{display: block;height: 10px;background-image: url(base64/star-15.png);background-size: 50px 10px;}
